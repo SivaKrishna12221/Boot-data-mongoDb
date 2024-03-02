@@ -27,7 +27,7 @@ public class MongoTestRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Manager mgr=new Manager();
+		/*Manager mgr=new Manager();
 		mgr.setAddress("mdn");
 		mgr.setMobileNo(794345355l);
 		mgr.setName("vishnu");
@@ -35,24 +35,24 @@ public class MongoTestRunner implements CommandLineRunner {
 		mgr.setFriends(List.of("sitha","ram"));
 		mgr.setMap(Map.of("id",443,"name","admin"));
 		Admin1 admin = new Admin1(20,"raju");
-	//	String result = service.registerManagerInfo(mgr);
-	  //  System.out.println(result);
-	//	List<Manager> mgrs = service.fetchAllManagerInfo();
-	//	OptionalInt max = mgrs.stream().mapToInt(x->x.getMgrId()).max();
-	/*	System.out.println("max value:");
+		String result = service.registerManagerInfo(mgr);
+	   System.out.println(result);
+		List<Manager> mgrs = service.fetchAllManagerInfo();
+		OptionalInt max = mgrs.stream().mapToInt(x->x.getMgrId()).max();
+		System.out.println("max value:");
 		System.out.println(max);
 		Collections.sort(mgrs,new SortManager());
-		mgrs.forEach(System.out::println);*/
+		mgrs.forEach(System.out::println);
 	
-	/*Manager mgr2=new Manager();
+	Manager mgr2=new Manager();
 	mgr2.setId(UUID.randomUUID().toString());
 	mgr2.setAdmin(new Admin1(20,"raj"));
 	String re = service.registerManagerInfo(mgr2);
 	System.out.println(re);
-	*//* Manager manager = service.fetchManagerEmployeeId().get();
+	 Manager manager = service.fetchManagerEmployeeId().get();
 			System.out.println(manager);
-		*/
-	/*	int countOfMgrsBetween = service.countOfMgrsBetween(200, 500);
+		
+		int countOfMgrsBetween = service.countOfMgrsBetween(200, 500);
 		System.out.println(countOfMgrsBetween);*/
 		List<Manager> mgrs = service.fetchBetweenRangeManagers(200, 500);
 		System.out.println(mgrs);

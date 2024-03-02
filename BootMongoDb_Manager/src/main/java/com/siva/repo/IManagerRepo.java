@@ -9,8 +9,6 @@ import com.siva.documents.Manager;
 
 public interface IManagerRepo extends MongoRepository<Manager,String>{
 
-	//@Query(value="")
-	//public List<Manager> fetchManagerInfo(Integer id);
 	@Query(value="{mgrId:{$gte:?0,$lte:?1}}",count=true)
 	public int fetchCountOfManagers(Integer id,Integer id2);
 	@Query(value="{mgrId:{$gte:?0,$lte:?1}}")
